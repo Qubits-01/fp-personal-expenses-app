@@ -51,22 +51,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<Transaction> _userTransactions = transactionDummyData;
+  // final List<Transaction> _userTransactions = transactionDummyData;
 
-  // final List<Transaction> _userTransactions = [
-  //   // Transaction(
-  //   //   id: "t1",
-  //   //   title: "New Shoes",
-  //   //   amount: 69.99,
-  //   //   date: DateTime.now(),
-  //   // ),
-  //   // Transaction(
-  //   //   id: "t2",
-  //   //   title: "Weekly Groceries",
-  //   //   amount: 16.53,
-  //   //   date: DateTime.now(),
-  //   // ),
-  // ];
+  final List<Transaction> _userTransactions = [
+    // Transaction(
+    //   id: "t1",
+    //   title: "New Shoes",
+    //   amount: 69.99,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: "t2",
+    //   title: "Weekly Groceries",
+    //   amount: 16.53,
+    //   date: DateTime.now(),
+    // ),
+  ];
 
   List<Transaction> get _recentTransactions {
     return _userTransactions.where((tx) {
@@ -113,6 +113,18 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _loadTransactionDummyData() {
+    _userTransactions.removeWhere((tx) {
+      return tx.id.isNotEmpty;
+    });
+
+    for (Transaction tx in transactionDummyData) {
+      setState(() {
+        _userTransactions.add(tx);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -126,6 +138,12 @@ class _MyHomePageState extends State<MyHomePage> {
               Icons.add,
             ),
             onPressed: () => _startAddNewTransaction(context),
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.refresh,
+            ),
+            onPressed: _loadTransactionDummyData,
           ),
         ],
       ),

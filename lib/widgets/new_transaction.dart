@@ -52,7 +52,7 @@ class _NewTransactionState extends State<NewTransaction> {
       });
     });
 
-    print("...");
+    // print("...");
   }
 
   @override
