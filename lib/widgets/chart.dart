@@ -31,15 +31,15 @@ class Chart extends StatelessWidget {
       // print(totalSum);
 
       return {
-        "day": DateFormat.E().format(weekDay).substring(0, 1),
-        "amount": totalSum
+        'day': DateFormat.E().format(weekDay).substring(0, 1),
+        'amount': totalSum
       };
     }).reversed.toList();
   }
 
   double get totalSpending {
     return groupedTransactionValues.fold(0.0, (sum, item) {
-      return sum + item["amount"];
+      return sum + item['amount'];
     });
   }
 
@@ -57,11 +57,11 @@ class Chart extends StatelessWidget {
             return Flexible(
               fit: FlexFit.tight,
               child: ChartBar(
-                data["day"],
-                data["amount"],
+                data['day'],
+                data['amount'],
                 totalSpending == 0.0
                     ? 0.0
-                    : (data["amount"] as double) / totalSpending,
+                    : (data['amount'] as double) / totalSpending,
               ),
             );
           }).toList(),

@@ -8,12 +8,12 @@ class NewTransaction extends StatefulWidget {
   final Function addTx;
 
   NewTransaction(this.addTx) {
-    print("Constructor NewTransaction Widget");
+    print('Constructor NewTransaction Widget');
   }
 
   @override
   _NewTransactionState createState() {
-    print("createSate NewTransaction Widget");
+    print('createSate NewTransaction Widget');
     return _NewTransactionState();
   }
 }
@@ -24,14 +24,14 @@ class _NewTransactionState extends State<NewTransaction> {
   DateTime _selectedDate;
 
   _NewTransactionState() {
-    print("Constructor NewTransaction State");
+    print('Constructor NewTransaction State');
   }
 
   @override
   void initState() {
     super.initState();
 
-    print("initState()");
+    print('initState()');
   }
 
   @override
@@ -39,7 +39,7 @@ class _NewTransactionState extends State<NewTransaction> {
     // TODO: implement didUpdateWidget
     super.didUpdateWidget(oldWidget);
 
-    print("didUpdateWidger()");
+    print('didUpdateWidger()');
   }
 
   @override
@@ -47,7 +47,7 @@ class _NewTransactionState extends State<NewTransaction> {
     // TODO: implement dispose
     super.dispose();
 
-    print("dispose()");
+    print('dispose()');
   }
 
   void _submitData() {
@@ -87,7 +87,7 @@ class _NewTransactionState extends State<NewTransaction> {
       });
     });
 
-    // print("...");
+    // print('...');
   }
 
   @override
@@ -108,7 +108,7 @@ class _NewTransactionState extends State<NewTransaction> {
               // CupertinoTextField(),
               TextField(
                 decoration: InputDecoration(
-                  labelText: "Title",
+                  labelText: 'Title',
                 ),
                 controller: _titleController,
                 onSubmitted: (_) => _submitData(),
@@ -118,7 +118,7 @@ class _NewTransactionState extends State<NewTransaction> {
               ),
               TextField(
                 decoration: InputDecoration(
-                  labelText: "Amount",
+                  labelText: 'Amount',
                 ),
                 controller: _amountController,
                 keyboardType: TextInputType.number,
@@ -132,19 +132,19 @@ class _NewTransactionState extends State<NewTransaction> {
                     Expanded(
                       child: Text(
                         _selectedDate == null
-                            ? "No Date Chosen!"
-                            : "Picked Date: ${DateFormat.yMd().format(_selectedDate)}",
+                            ? 'No Date Chosen!'
+                            : 'Picked Date: ${DateFormat.yMd().format(_selectedDate)}',
                       ),
                     ),
                     AdaptiveFlatButton(
-                      "Choose Date",
+                      'Choose Date',
                       _presentDatePicker,
                     ),
                   ],
                 ),
               ),
               RaisedButton(
-                child: Text("Add Transaction"),
+                child: Text('Add Transaction'),
                 color: Theme.of(context).primaryColor,
                 textColor: Theme.of(context).textTheme.button.color,
                 onPressed: _submitData,

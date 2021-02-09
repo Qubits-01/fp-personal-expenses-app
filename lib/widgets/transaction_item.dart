@@ -52,7 +52,7 @@ class _TransactionItemState extends State<TransactionItem> {
           child: Padding(
             padding: const EdgeInsets.all(6),
             child: FittedBox(
-              child: Text("\$${widget.transaction.amount}"),
+              child: Text('\$${widget.transaction.amount}'),
             ),
           ),
         ),
@@ -66,9 +66,9 @@ class _TransactionItemState extends State<TransactionItem> {
         trailing: MediaQuery.of(context).size.width > 460
             ? FlatButton.icon(
                 icon: const Icon(Icons.delete),
-                label: const Text("Delete"),
+                label: const Text('Delete'),
                 textColor: Theme.of(context).errorColor,
-                onPressed: () => widget.deleteTx(widget.transaction),
+                onPressed: () => widget.deleteTx(widget.transaction.id),
               )
             : IconButton(
                 icon: const Icon(Icons.delete),

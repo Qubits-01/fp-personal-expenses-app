@@ -24,15 +24,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Personal Expenses",
+      title: 'Personal Expenses',
       theme: ThemeData(
         primarySwatch: Colors.purple,
         accentColor: Colors.amber,
         // errorColor: Colors.red,
-        fontFamily: "Quicksand",
+        fontFamily: 'Quicksand',
         textTheme: ThemeData.light().textTheme.copyWith(
               headline6: TextStyle(
-                fontFamily: "OpenSans",
+                fontFamily: 'OpenSans',
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(
           textTheme: ThemeData.light().textTheme.copyWith(
                 headline6: TextStyle(
-                  fontFamily: "OpenSans",
+                  fontFamily: 'OpenSans',
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
@@ -68,14 +68,14 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
 
   final List<Transaction> _userTransactions = [
     // Transaction(
-    //   id: "t1",
-    //   title: "New Shoes",
+    //   id: 't1',
+    //   title: 'New Shoes',
     //   amount: 69.99,
     //   date: DateTime.now(),
     // ),
     // Transaction(
-    //   id: "t2",
-    //   title: "Weekly Groceries",
+    //   id: 't2',
+    //   title: 'Weekly Groceries',
     //   amount: 16.53,
     //   date: DateTime.now(),
     // ),
@@ -169,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            "Show Chart",
+            'Show Chart',
             style: Theme.of(context).textTheme.headline6,
           ),
           Switch.adaptive(
@@ -216,7 +216,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
     return Platform.isIOS
         ? CupertinoNavigationBar(
             middle: Text(
-              "Personal Expenses",
+              'Personal Expenses',
             ),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
@@ -230,7 +230,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
           )
         : AppBar(
             title: Text(
-              "Personal Expenses",
+              'Personal Expenses',
             ),
             actions: <Widget>[
               IconButton(

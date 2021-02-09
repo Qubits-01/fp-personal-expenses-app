@@ -17,7 +17,7 @@ class TransactionList extends StatelessWidget {
               return Column(
                 children: <Widget>[
                   Text(
-                    "No transaction added yet!",
+                    'No transaction added yet!',
                     style: Theme.of(context).textTheme.headline6,
                   ),
                   const SizedBox(
@@ -26,7 +26,7 @@ class TransactionList extends StatelessWidget {
                   Container(
                     height: constraints.maxHeight * 0.6,
                     child: Image.asset(
-                      "assets/images/waiting.png",
+                      'assets/images/waiting.png',
                       fit: BoxFit.cover,
                     ),
                   ),
